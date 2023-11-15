@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namora comigo?</title>
+</head>
+<body>
+    <div class="conteudo"> 
+        <h2>Aceita namorar comigo?</h2>
+        <button onclick="sim()">SIM</button>
+        <button onmouseover="desvia(this)">NÃO</button>
+    </div>  
+</body>
+<style>
+    .conteudo {
+        text-align: center;
+        width: 100%;
+        position: fixed;
+        padding: 10px;
+    }
+    body {
+        background-color: red;
+    }
+</style>
+
+<script>
+    function sim() {
+        // Redireciona para o vídeo no YouTube (substitua o link abaixo pelo seu)
+        window.location.href = 'https://www.youtube.com/watch?v=izGwDsrQ1eQ';
+    }
+
+    function desvia(btn) {
+        console.log("Opa, desviei...");
+
+        // Posições mais distantes
+        var posicoes = [
+            { left: "10%", top: "73%" },
+            { left: "80%", top: "70%" },
+            { left: "30%", right: "12%" },
+        ];
+
+        // Escolhe uma posição aleatória
+        var posicaoAleatoria = posicoes[Math.floor(Math.random() * posicoes.length)];
+
+        // Atualiza a posição do botão instantaneamente
+        btn.style.transition = 'none'; // Desativa a transição para um movimento instantâneo
+        btn.style.position = 'absolute';
+        btn.style.left = posicaoAleatoria.left;
+        btn.style.top = posicaoAleatoria.top;
+
+        // Reativa a transição para futuros movimentos
+        setTimeout(function() {
+            btn.style.transition = '';
+        }, 0);
+    }
+</script>
+</html>
